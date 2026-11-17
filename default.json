@@ -6,6 +6,13 @@
     "description": "Security fixes skip the cooldown: the exposure window is the bigger risk than a bad patch.",
     "minimumReleaseAge": null
   },
+  "packageRules": [
+    {
+      "description": "The org's own shared actions skip the cooldown: a tag there is our own reviewed change, and each caller's bump PR is reviewed again.",
+      "matchPackageNames": ["zelesny/actions"],
+      "minimumReleaseAge": "0 days"
+    }
+  ],
   "lockFileMaintenance": {
     "description": "A lockfile refresh carries no release dates, so Renovate can't age-check what it pulls in and its stability-days check just sits pending. The package manager has to hold new versions back itself (uv: exclude-newer in pyproject); enable lockFileMaintenance only in a repo that sets one.",
     "minimumReleaseAge": null
